@@ -1,8 +1,9 @@
-library image_utils;
+library image_utils_class;
 
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 
@@ -27,5 +28,10 @@ class ImageUtils {
   static Future<String> networkImageToBase64(String url) async {
     http.Response response = await http.get(url);
     return base64.encode(response.bodyBytes);
+  }
+
+   Future assetImageToBase64(String path) async {
+    ByteData bytes = await rootBundle.load(path);
+    return base64.encode(Uint8List.view(bytes.buffer));
   }
 }

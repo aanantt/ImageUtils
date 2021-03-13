@@ -1,7 +1,6 @@
-name: image_utils
+name: image_utils_class
 description: A new Flutter package project.
-version: 0.0.1
-author:
+version: 0.0.2
 homepage: https://github.com/aanantt/ImageUtils.git
 
 environment:
