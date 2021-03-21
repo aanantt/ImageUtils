@@ -25,7 +25,7 @@ class ImageUtils {
     return base64Encode(imgFile.readAsBytesSync());
   }
 
-  static Future<String> networkImageToBase64(String url) async {
+  static Future networkImageToBase64(String url) async {
     http.Response response = await http.get(url);
     return base64.encode(response.bodyBytes);
   }
